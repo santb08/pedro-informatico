@@ -16,7 +16,7 @@ TagManager:
   - Platforms
   - Player
   - Background
-  - 
+  - Interactive Objects
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Platforms
     uniqueID: 1346375827
+    locked: 0
+  - name: Interactive Objects
+    uniqueID: 2578616481
     locked: 0
   - name: Player
     uniqueID: 44883433
