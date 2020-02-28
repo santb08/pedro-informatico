@@ -8,7 +8,8 @@ public class OpenChest : MonoBehaviour
     [SerializeField] LayerMask layerMaskKey;
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.layer == layerMaskKey) {
+        if (collision.gameObject.layer == Mathf.Log(layerMaskKey.value, 2)) {
+            Debug.Log("hola");  
             animator.SetBool("isOpen", true);
         }
     }
