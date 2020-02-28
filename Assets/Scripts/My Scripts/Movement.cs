@@ -33,7 +33,6 @@ public class Movement : MonoBehaviour
     private bool IsGrounded()
     {
         RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, .1f, platformsLayerMask);
-        Debug.Log(raycastHit2d.collider);
         return raycastHit2d.collider != null;
     }
 
@@ -56,7 +55,6 @@ public class Movement : MonoBehaviour
             this.Jump();
         }
 
-        Debug.Log(Mathf.Abs(rigidbody2d.velocity.x));
         animator.SetFloat("speed", Mathf.Abs(rigidbody2d.velocity.x));
     }
 

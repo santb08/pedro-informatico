@@ -10,11 +10,11 @@ public class CreateMagnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && magnetObject == null)
+        if (Input.GetKeyDown(KeyCode.F) && magnetObject == null)
         {
             magnetObject = Instantiate(magnetPrefab, transform);
         }
-        if (Input.GetKeyUp(KeyCode.J) && magnetObject != null)
+        if (Input.GetKeyUp(KeyCode.F) && magnetObject != null)
         {
             Destroy(magnetObject);
         }
