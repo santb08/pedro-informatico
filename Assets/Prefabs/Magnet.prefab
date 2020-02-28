@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7353187803330149238}
-  - component: {fileID: 7353187803330149243}
   - component: {fileID: 7353187803330149240}
   - component: {fileID: 7353187803330149241}
   - component: {fileID: 7353187803330149242}
@@ -34,18 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7353187803330149243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7353187803330149239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bf8881262977b34ebe80627fceab7c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!250 &7353187803330149240
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -58,9 +45,9 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: -10
+  m_ForceMagnitude: -30
   m_ForceVariation: 0
-  m_DistanceScale: 5
+  m_DistanceScale: 1
   m_ForceSource: 0
   m_ForceTarget: 0
   m_ForceMode: 0
@@ -81,7 +68,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 5
 --- !u!212 &7353187803330149242
 SpriteRenderer:
   m_ObjectHideFlags: 0

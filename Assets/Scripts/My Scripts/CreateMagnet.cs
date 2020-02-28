@@ -6,15 +6,16 @@ public class CreateMagnet : MonoBehaviour
 {
     [SerializeField] private GameObject magnetPrefab;
     private GameObject magnetObject;
+    private const KeyCode keyMagnet = KeyCode.J;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && magnetObject == null)
+        if (Input.GetKeyDown(keyMagnet) && magnetObject == null)
         {
             magnetObject = Instantiate(magnetPrefab, transform);
         }
-        if (Input.GetKeyUp(KeyCode.F) && magnetObject != null)
+        if (Input.GetKeyUp(keyMagnet) && magnetObject != null)
         {
             Destroy(magnetObject);
         }
