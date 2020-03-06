@@ -9,7 +9,7 @@ public class OpenChest : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.layer == Mathf.Log(layerMaskKey.value, 2)) {
-            Debug.Log("hola");  
+            Destroy(collision.gameObject);
             animator.SetBool("isOpen", true);
         }
     }
