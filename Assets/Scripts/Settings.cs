@@ -8,4 +8,8 @@ public class Settings : MonoBehaviour
     public void GoBack() {
         SceneManager.LoadScene("Menu");
     }
+
+    public void GoInput() { 
+        SceneManager.LoadScene("Input");
+    }
 }
