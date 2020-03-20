@@ -33,7 +33,9 @@ public class Enemy : MonoBehaviour
 
      float d = Vector3.Distance(player.transform.position, transform.position);
 
-     if(d <= 0.2 ) Destroy(player);
+     if(d <= 0.2 ){
+         Destroy(player);
+     } 
      Debug.DrawLine(transform.position, target, Color.green);
     }
 
