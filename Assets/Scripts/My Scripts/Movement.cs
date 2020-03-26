@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
             this.Flip(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             this.Jump();
         }

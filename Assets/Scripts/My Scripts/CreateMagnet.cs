@@ -6,7 +6,7 @@ public class CreateMagnet : MonoBehaviour
 {
     [SerializeField] private GameObject magnetPrefab;
     private GameObject magnetObject;
-    private const KeyCode keyMagnet = KeyCode.J;
+    private const KeyCode keyMagnet = KeyCode.Space;
 
     // Update is called once per frame
     void Update()

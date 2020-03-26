@@ -7452,6 +7452,7 @@ GameObject:
   - component: {fileID: 2110954154}
   - component: {fileID: 2110954153}
   - component: {fileID: 2110954152}
+  - component: {fileID: 2110954155}
   m_Layer: 5
   m_Name: Guardar_Options_Button
   m_TagString: Untagged
@@ -7518,7 +7519,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2110954153}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2110954155}
+        m_MethodName: WriteFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2110954153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7554,6 +7566,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110954150}
   m_CullTransparentMesh: 0
+--- !u!114 &2110954155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110954150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0ff895f63658848ae4c04522ba05c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thematic: {fileID: 1992436542}
+  q1: {fileID: 1616546128}
+  q1r1: {fileID: 1240738435}
+  q1r2: {fileID: 1423762774}
+  q1r3: {fileID: 726537022}
+  q2: {fileID: 158412946}
+  q2r1: {fileID: 692651919}
+  q2r2: {fileID: 936798076}
+  q2r3: {fileID: 2111455888}
+  q3: {fileID: 974592412}
+  q3r1: {fileID: 1797776400}
+  q3r2: {fileID: 178193943}
+  q3r3: {fileID: 38898380}
 --- !u!1 &2111455888
 GameObject:
   m_ObjectHideFlags: 0

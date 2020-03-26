@@ -6,6 +6,7 @@ public class Setter : MonoBehaviour
 {
     [SerializeField] private GraplingHook graplingHook;
 
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))

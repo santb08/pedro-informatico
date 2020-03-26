@@ -22,10 +22,14 @@ public class GraplingHook : MonoBehaviour {
     public Rigidbody2D origin;
     private float DelayAirTime = 2f;
 
+    public GameObject keyObject;
+
     void Start() {
         line = GetComponent<LineRenderer>();
         collider = GetComponent<EdgeCollider2D>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+
+        Physics2D.IgnoreCollision(collider, keyObject.GetComponent<CircleCollider2D>(), true);
     }
 
     public void setStart(Vector2 targetPos) {
@@ -44,6 +48,8 @@ public class GraplingHook : MonoBehaviour {
 
         if (pulling) {
             PullToGraplingHookDirection();
+            SetGraplingHookPositions(transform.position, origin.position);
+            return;
         } else {
             if (Input.GetKeyUp(KeyCode.Mouse0)) {
                 this.ResetGraplingHook();
@@ -90,6 +96,6 @@ public class GraplingHook : MonoBehaviour {
     void PullToGraplingHookDirection() {
         Vector2 dir = (Vector2)transform.position - origin.position;
         dir = dir.normalized * 0.25f + dir * 0.75f;
-        origin.AddForce(dir * pullForce * Time.deltaTime * 1000);
+        origin.AddForce(dir * pullForce);
     }
 }
