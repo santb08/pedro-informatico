@@ -1155,6 +1155,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Question
       objectReference: {fileID: 0}
+    - target: {fileID: 6446620177291386697, guid: 1eef7120f767e6e4583384fd4709a5ac,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446620177291386697, guid: 1eef7120f767e6e4583384fd4709a5ac,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446620177291386697, guid: 1eef7120f767e6e4583384fd4709a5ac,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 6446620177291386699, guid: 1eef7120f767e6e4583384fd4709a5ac,
         type: 3}
       propertyPath: objKey

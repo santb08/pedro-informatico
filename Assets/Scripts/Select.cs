@@ -11,7 +11,9 @@ using System.Linq;
 public class Select : MonoBehaviour {
 
     public GameObject option1, option2;
-    string[] dirs = Directory.GetFiles("Assets\\Config\\", "*.txt");
+    string[] files = Directory.GetFiles("Assets\\Config\\", "*.txt");
+    string thematic1 = "", thematic2 = "";
+
     void Start() {
         setOption();
     }
@@ -21,7 +23,7 @@ public class Select : MonoBehaviour {
         option2 = GameObject.Find("Option_2_Button");
         string path1 = "",path2 = "";
 
-        foreach (string file in dirs) {
+        foreach (string file in files) {
             if(file.Contains("1_")) {
                 path1=file;
             } else path2 = file;
@@ -31,19 +33,27 @@ public class Select : MonoBehaviour {
         string filename1 = Path.GetFileName(path1);
         int index1 = filename1.IndexOf('.');
         if (index1 > 0) {
-            option1.GetComponentInChildren<TextMeshProUGUI>().text = filename1.Substring(filename1.IndexOf('_')+1, index1-2);
+            thematic1 = filename1.Substring(filename1.IndexOf('_')+1, index1-2);
+            option1.GetComponentInChildren<TextMeshProUGUI>().text = thematic1;
         }
 
         //////////////////Temática 1//////////////////
         string filename2 = Path.GetFileName(path2);
         int index2 = filename2.IndexOf('.');
         if (index2 > 0) {
-            option2.GetComponentInChildren<TextMeshProUGUI>().text = filename2.Substring(filename2.IndexOf('_')+1, index2-2);
+            thematic2 = filename2.Substring(filename1.IndexOf('_')+1, index2-2);
+            option2.GetComponentInChildren<TextMeshProUGUI>().text = thematic2;
         }
     }
 
     // Se podría pasar los parametros de la temática seleccionada
-    public void Play() { 
+    public void Play_1() {
+        PlayerPrefs.SetString("thematic", thematic1);
+        SceneManager.LoadScene("Demo");
+    }
+    public void Play_2() {
+        PlayerPrefs.SetString("thematic", thematic2);
+        Debug.Log("Boton 2");
         SceneManager.LoadScene("Demo");
     }
 
