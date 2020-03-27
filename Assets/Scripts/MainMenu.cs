@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     public void PlayGame() {
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("Select");
     }
 
     public void ExitGame() {
