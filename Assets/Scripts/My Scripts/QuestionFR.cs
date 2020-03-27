@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class QuestionFR : MonoBehaviour
 {
     private const string QUESTION_FORMAT = "{1}{0}{2}{0}{3}{0}{4}";
@@ -28,21 +28,24 @@ public class QuestionFR : MonoBehaviour
     public GameObject q3r2;
     public GameObject q3r3;
 
+    string[] dirs = Directory.GetFiles("Assets\\Config\\", "*.txt");
 
     public void WriteFile()
     {
-        string path = "Assets/config/" + thematic.GetComponent<TextMeshProUGUI>().text + ".txt";
+        string name = thematic.GetComponent<TextMeshProUGUI>().text;
+        string path = dirs.Length == 0 ? "Assets/config/1_" +name + ".txt" : "Assets/config/2_" +name + ".txt";
         string[] questions = GetQuestions();
         StreamWriter writer = new StreamWriter(path, true);
 
         foreach (string question in questions) {
-            Debug.Log(question);
             writer.WriteLine(question);
         }
 
         writer.Close();
 
         AssetDatabase.ImportAsset(path);
+
+        SceneManager.LoadScene("Select");
     }
 
     string[] GetQuestions()
@@ -76,3 +79,18 @@ public class QuestionFR : MonoBehaviour
         return string.Format(QUESTION_FORMAT, SEPARATOR, q, r1, r2, r3);
     }
 }
+// int playerScore = 80;
+// And we want to save playerScore:
+
+// Save the score in the OnDisable function
+
+// void OnDisable()
+// {
+//     PlayerPrefs.SetInt("score", playerScore);
+// }
+// Load it in the OnEnable function
+
+// void OnEnable()
+// {
+//     playerScore  =  PlayerPrefs.GetInt("score");
+// }
