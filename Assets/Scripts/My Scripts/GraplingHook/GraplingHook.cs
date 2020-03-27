@@ -48,7 +48,7 @@ public class GraplingHook : MonoBehaviour {
 
         if (pulling) {
             PullToGraplingHookDirection();
-            SetGraplingHookPositions(transform.position, origin.position);
+            SetGraplingHookPositions(transform.position, origin.position, true);
             return;
         } else {
             if (Input.GetKeyUp(KeyCode.Mouse0)) {
@@ -82,12 +82,14 @@ public class GraplingHook : MonoBehaviour {
         pulling = true;
     }
 
-    void SetGraplingHookPositions(Vector2 pos1, Vector2 pos2) {
-        line.SetPosition(0, pos1);
+    void SetGraplingHookPositions(Vector2 pos1, Vector2 pos2, bool pulling = false) {
+        if (!pulling) {
+            line.SetPosition(0, pos1);
+        }
         line.SetPosition(1, pos2);
     }
 
-    void ResetGraplingHook() {
+    public void ResetGraplingHook() {
         this.SetGraplingHookPositions(Vector2.zero, Vector2.zero);
         pulling = false;
         update = false;
