@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestionClass
 {
     private string FORMAT_QUESTION = "Pregunta #{0}: \n {1} \n {2}";
     private string FORMAT_ANSWER = "{0} - {1} \n";
 
-    private int correctAnswerIndex;
+    public int correctAnswerIndex;
     private int id;
     private string questionContent;
     private string[] answers;
@@ -14,8 +16,30 @@ public class QuestionClass
     public QuestionClass(int id, string question, string[] answers, int correctAnswerIndex) {
         this.id = id;
         this.questionContent = question;
-        this.answers = answers;
-        this.correctAnswerIndex = correctAnswerIndex;
+        this.answers = this.RandomizeAnswers(answers);
+    }
+
+    string[] RandomizeAnswers(string[] answers)
+    {
+        string correctAnswer = answers[0];
+
+        for (int t = 0; t < answers.Length; t++)
+        {
+            string tmp = answers[t];
+            int r = UnityEngine.Random.Range(t, answers.Length);
+            answers[t] = answers[r];
+            answers[r] = tmp;
+        }
+
+        for (int t = 0; t < answers.Length; t++)
+        {
+            if (correctAnswer == answers[t]) {
+                correctAnswerIndex = t;
+                Debug.Log(correctAnswer);
+            }
+        }
+
+        return answers;
     }
 
     public int Id {
