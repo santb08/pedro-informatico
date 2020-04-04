@@ -9,14 +9,16 @@ public class GameManager : MonoBehaviour
 {
     // @constants
     private static int CurrentLevel = 1;
+    public static string directory = @"Assets\\Config\\";
     public static string GameThematic = "​";
     // private string thematic;
-    public static string[] files = Directory.GetFiles("Assets\\Config\\", "*.txt");
+    public static string[] files;
     private static string[] questionsFile;
     private static string thematic;
     private static QuestionClass[] questions = new QuestionClass[3];
     
     static GameManager() {
+        files = Directory.GetFiles("Assets\\Config\\", "*.txt");
         if (GameThematic != "")
         {
             FormatQuestions();
@@ -38,21 +40,29 @@ public class GameManager : MonoBehaviour
         GameThematic = newThematic;
     }
 
+    public static void UpdateFiles()
+    {
+        files = Directory.GetFiles("Assets\\Config\\", "*.txt");
+    }
+
     public static void FormatQuestions() 
     {
         //Obtener archivo que contiene las preguntas
         var match = files.FirstOrDefault(stringToCheck => stringToCheck.Contains(GameThematic));
         //Se guarda en un array cada linea del archivo
-        questionsFile = File.ReadAllLines(match);
-        for (int i = 0; i < 3; i++)
+        if (match != null)
         {
-            questions[i] = new QuestionClass(
-                i,
-                questionsFile[i].Substring(0, questionsFile[i].IndexOf("%%")),
-                //Array de respuestas
-                Format(questionsFile[i].Substring(questionsFile[i].IndexOf("%%"))),
-                //Respuesta correcta
-                1);
+            questionsFile = File.ReadAllLines(match);
+            for (int i = 0; i < 3; i++)
+            {
+                questions[i] = new QuestionClass(
+                    i,
+                    questionsFile[i].Substring(0, questionsFile[i].IndexOf("%%")),
+                    //Array de respuestas
+                    Format(questionsFile[i].Substring(questionsFile[i].IndexOf("%%"))),
+                    //Respuesta correcta
+                    1);
+            }
         }
     }
     

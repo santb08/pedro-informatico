@@ -65,6 +65,6 @@ public class QuestionClass
             question += string.Format(this.FORMAT_ANSWER, i+1, answers[i]);
         }
 
-        return string.Format(this.FORMAT_QUESTION, this.id, this.questionContent, question);
+        return string.Format(this.FORMAT_QUESTION, this.id+1, this.questionContent, question);
     }
 }

@@ -70,8 +70,13 @@ public class QuestionFR : MonoBehaviour
                 q3r3.GetComponent<TextMeshProUGUI>().text
             )
         };
-
+        GameManager.UpdateFiles();
         return questions;
+    }
+
+    public void GoBack()
+    {
+        SceneManager.LoadScene("Settings");
     }
 
     string FormatQuestion(string q, string r1, string r2, string r3)
