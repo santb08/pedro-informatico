@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class CreateQuestion : MonoBehaviour
 {
     [SerializeField] GameObject objKey;
@@ -18,7 +18,7 @@ public class CreateQuestion : MonoBehaviour
 
     void Update()
     {
-        this.renderQuestions(0);
+        this.RenderQuestions(0);
     }
 
     IEnumerator TypeText(string message) {
@@ -41,11 +41,15 @@ public class CreateQuestion : MonoBehaviour
         }
     }
 
-    public void renderQuestions(int lvl) {
+    public void RenderQuestions(int lvl) {
         this.HandleUserInput();
-
-        if (userIndexInput > 0 && userIndexInput == questions[lvl].correctAnswerIndex) {
-            Debug.Log("melooo");
+        Debug.Log(userIndexInput);
+        if (userIndexInput > 0) {
+            SceneManager.LoadScene("Level_2");  
+            if (userIndexInput == questions[lvl].correctAnswerIndex) {
+                //Sumar puntos
+                Debug.Log("Hola");
+            }
         } else {
             Debug.Log("NOOOo");
         }
