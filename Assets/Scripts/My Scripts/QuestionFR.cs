@@ -44,7 +44,7 @@ public class QuestionFR : MonoBehaviour
         writer.Close();
 
         AssetDatabase.ImportAsset(path);
-
+        GameManager.UpdateFiles();
         SceneManager.LoadScene("Select");
     }
 

@@ -18,7 +18,7 @@ public class CreateQuestion : MonoBehaviour
 
     void Update()
     {
-        this.RenderQuestions(0);
+        this.RenderQuestions(GameManager.CurrentLevel-1);
     }
 
     IEnumerator TypeText(string message) {
@@ -45,11 +45,12 @@ public class CreateQuestion : MonoBehaviour
         this.HandleUserInput();
         Debug.Log(userIndexInput);
         if (userIndexInput > 0) {
-            SceneManager.LoadScene("Level_2");  
             if (userIndexInput == questions[lvl].correctAnswerIndex) {
                 //Sumar puntos
                 Debug.Log("Hola");
             }
+            SceneManager.LoadScene("Level_2");
+            if (GameManager.CurrentLevel < 3) GameManager.CurrentLevel++;
         } else {
             Debug.Log("NOOOo");
         }

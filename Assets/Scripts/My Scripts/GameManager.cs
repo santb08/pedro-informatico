@@ -8,7 +8,7 @@ using System;
 public class GameManager : MonoBehaviour
 {
     // @constants
-    private static int CurrentLevel = 1;
+    public static int CurrentLevel = 1;
     public static string directory = @"Assets\\Config\\";
     public static string GameThematic = "​";
     // private string thematic;
