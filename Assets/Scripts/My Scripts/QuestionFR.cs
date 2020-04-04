@@ -33,7 +33,7 @@ public class QuestionFR : MonoBehaviour
     public void WriteFile()
     {
         string name = thematic.GetComponent<TextMeshProUGUI>().text;
-        string path = dirs.Length == 0 ? "Assets/config/1_" +name + ".txt" : "Assets/config/2_" +name + ".txt";
+        string path = "Assets/config/" + name + ".txt";
         string[] questions = GetQuestions();
         StreamWriter writer = new StreamWriter(path, true);
 

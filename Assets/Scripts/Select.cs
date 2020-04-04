@@ -7,57 +7,45 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Linq;
-
 public class Select : MonoBehaviour {
 
-    public GameObject option1, option2;
-    string[] files = Directory.GetFiles("Assets\\Config\\", "*.txt");
-    string thematic1 = "", thematic2 = "";
+    public GameObject option1;
+    public Button nextThematicBtn;
+
+    private int file_index = 0;
 
     void Start() {
-        setOption();
+        
     }
-    
-    void setOption() {
+
+    private void Update()
+    {
+        SetOption();
+    }
+
+    void SetOption() {
         option1 = GameObject.Find("Option_1_Button");
-        option2 = GameObject.Find("Option_2_Button");
-        string path1 = "",path2 = "";
-
-        foreach (string file in files) {
-            if(file.Contains("1_")) {
-                path1=file;
-            } else path2 = file;
-        }
-
-        //////////////////Temática 1//////////////////
-        string filename1 = Path.GetFileName(path1);
-        int index1 = filename1.IndexOf('.');
-        if (index1 > 0) {
-            thematic1 = filename1.Substring(filename1.IndexOf('_')+1, index1-2);
-            option1.GetComponentInChildren<TextMeshProUGUI>().text = thematic1;
-        }
-
-        //////////////////Temática 1//////////////////
-        string filename2 = Path.GetFileName(path2);
-        int index2 = filename2.IndexOf('.');
-        if (index2 > 0) {
-            thematic2 = filename2.Substring(filename1.IndexOf('_')+1, index2-2);
-            option2.GetComponentInChildren<TextMeshProUGUI>().text = thematic2;
-        }
+        nextThematicBtn = GameObject.Find("Next_Thematic_Button").GetComponent<Button>();
+        //Se optiene el nombre del archivo
+        string fileName = Path.GetFileName(GameManager.files[file_index]);
+        //Se asigna la temática del juego
+        GameManager.SetGameThematic(fileName.Substring(0,fileName.IndexOf(".txt")));
+        //Se asigna el texto al botón de temática
+        this.option1.GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GameThematic;
     }
 
-    // Se podría pasar los parametros de la temática seleccionada
-    public void Play_1() {
-        PlayerPrefs.SetString("thematic", thematic1);
-        SceneManager.LoadScene("Demo");
-    }
-    public void Play_2() {
-        PlayerPrefs.SetString("thematic", thematic2);
-        Debug.Log("Boton 2");
+    public void Play()
+    {
         SceneManager.LoadScene("Demo");
     }
 
-    public void goBack() {
+    public void IncreaseIndex() {
+        if (file_index < GameManager.files.Length - 1) file_index++;
+    }
+    public void DecreaseIndex() {
+        if (file_index > 0) file_index--;
+    }
+    public void GoBack() {
         SceneManager.LoadScene("Menu");
     }
 }  
