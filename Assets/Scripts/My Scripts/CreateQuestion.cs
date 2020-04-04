@@ -18,7 +18,7 @@ public class CreateQuestion : MonoBehaviour
 
     void Update()
     {
-        this.renderQuestions(0);
+        this.RenderQuestions(0);
     }
 
     IEnumerator TypeText(string message) {
@@ -41,7 +41,7 @@ public class CreateQuestion : MonoBehaviour
         }
     }
 
-    public void renderQuestions(int lvl) {
+    public void RenderQuestions(int lvl) {
         this.HandleUserInput();
         Debug.Log(userIndexInput);
         if (userIndexInput > 0) {

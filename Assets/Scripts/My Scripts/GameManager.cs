@@ -10,16 +10,18 @@ public class GameManager : MonoBehaviour
     // @constants
 
     private static int CurrentLevel = 1;
-    private static string GameThematic = "1_Temática Primera​";
+    public static string GameThematic = "​";
     // private string thematic;
-    private static string[] files = Directory.GetFiles("Assets\\Config\\", "*.txt");
+    public static string[] files = Directory.GetFiles("Assets\\Config\\", "*.txt");
     private static string[] questionsFile;
     private static string thematic;
     private static QuestionClass[] questions = new QuestionClass[3];
     
     static GameManager() {
-        thematic = PlayerPrefs.GetString("thematic");
-        FormatQuestions();
+        if (GameThematic != "")
+        {
+            FormatQuestions();
+        }
     }
 
     public static string GetGameThematic()
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
     public static void FormatQuestions() 
     {
         //Obtener archivo que contiene las preguntas
-        var match = files.FirstOrDefault(stringToCheck => stringToCheck.Contains(thematic));
+        var match = files.FirstOrDefault(stringToCheck => stringToCheck.Contains(GameThematic));
         //Se guarda en un array cada linea del archivo
         questionsFile = File.ReadAllLines(match);
         for (int i = 0; i < 3; i++)
