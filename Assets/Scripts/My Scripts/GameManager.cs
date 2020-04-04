@@ -8,7 +8,6 @@ using System;
 public class GameManager : MonoBehaviour
 {
     // @constants
-
     private static int CurrentLevel = 1;
     private static string GameThematic = "1_Temática Primera​";
     // private string thematic;
