@@ -13,15 +13,21 @@ public class Settings : MonoBehaviour
         SceneManager.LoadScene("Input");
     }
 
-    public void DeleteAll() {
-        System.IO.DirectoryInfo di = new DirectoryInfo("Assets\\Config\\");
-        foreach (FileInfo file in di.EnumerateFiles())
-        {
-            file.Delete(); 
-        }
-        foreach (DirectoryInfo dir in di.EnumerateDirectories())
-        {
-            dir.Delete(true); 
-        }
+    public void GoDeleteMenu()
+    {
+        SceneManager.LoadScene("DeleteMenu");
     }
+
+
+    //public void DeleteAll() {
+    //    System.IO.DirectoryInfo di = new DirectoryInfo("Assets\\Config\\");
+    //    foreach (FileInfo file in di.EnumerateFiles())
+    //    {
+    //        file.Delete(); 
+    //    }
+    //    foreach (DirectoryInfo dir in di.EnumerateDirectories())
+    //    {
+    //        dir.Delete(true); 
+    //    }
+    //}
 }
