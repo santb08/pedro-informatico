@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     public float walkSpeed;
-
+    Rigidbody2D key;
+    [SerializeField] LayerMask layerMaskKey;
     private bool killPlayer = false; //Se indica si se esta siguiendo al juagador
     private bool square; //Indica si se llego a una esquina
     Vector3 currentPosition; //Indica la posisción actualizada del enemigo
@@ -12,11 +14,13 @@ public class Enemy : MonoBehaviour {
     Vector3 f; //Ojetivo derecha
     Vector3 h; //Objetivo izquierda
 
-    GameObject player; //Referencia al jugador
+    GameObject player, enemy; 
     Vector3 initialPosition;
     // Start is called before the first frame update
     void Start () {
         player = GameObject.FindGameObjectWithTag ("Player"); //Se le da un tag para que sepa a quien debe buscar
+        key = GameObject.Find("Key").GetComponent<Rigidbody2D>();
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
         initialPosition = transform.position;
         currentPosition = new Vector3 ();
         square = false;
@@ -25,9 +29,9 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if (killPlayer == false) {
-            walk (walkSpeed);
+            Walk (walkSpeed);
         }
-
+        Debug.Log(key.velocity.x);
         float dX = player.transform.position[0] - this.transform.position[0];
         float dY = player.transform.position[1];
 
@@ -39,10 +43,10 @@ public class Enemy : MonoBehaviour {
             Destroy (player);
         }
         currentPosition = transform.position;
-        changeDirection ();
+        ChangeDirection ();
     }
 
-    private void walk (float speedEnemy) {
+    private void Walk (float speedEnemy) {
         float fixedSpeed = speedEnemy * Time.deltaTime;
         Vector3 target;
         if (square == true) {
@@ -56,7 +60,16 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    private void changeDirection () {
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == Mathf.Log(layerMaskKey.value, 2))
+        {
+            Debug.Log(enemy);
+            Destroy(enemy);
+        }
+    }
+
+    private void ChangeDirection () {
         float current = this.currentPosition[0];
         if (current > 14.1 && square == false) {
             square = true;

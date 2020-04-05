@@ -35,7 +35,7 @@ public class QuestionClass
         {
             if (correctAnswer == answers[t]) {
                 correctAnswerIndex = t;
-                Debug.Log(correctAnswer);
+                //Debug.Log(correctAnswer);
             }
         }
 

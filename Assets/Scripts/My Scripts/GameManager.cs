@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     // private string thematic;
     public static string[] files;
     private static string[] questionsFile;
-    private static string thematic;
     private static QuestionClass[] questions = new QuestionClass[3];
     
     static GameManager() {
