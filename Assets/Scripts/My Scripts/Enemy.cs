@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour {
         if (killPlayer == false) {
             Walk (walkSpeed);
         }
-        Debug.Log(key.velocity.x);
+
         float dX = player.transform.position[0] - this.transform.position[0];
         float dY = player.transform.position[1];
 
@@ -64,7 +64,10 @@ public class Enemy : MonoBehaviour {
     {
         if (collision.gameObject.layer == Mathf.Log(layerMaskKey.value, 2))
         {
-            Debug.Log(enemy);
+            if (Math.Abs(key.velocity.x) > 2)
+            {
+                Debug.Log(key.velocity.x);
+            }
             Destroy(enemy);
         }
     }
