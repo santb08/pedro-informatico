@@ -11,10 +11,10 @@ public class Select : MonoBehaviour {
 
     public GameObject option1;
 
-    private int file_index;
+    private int fileIndex;
     private string fileName;
     void Start() {
-        file_index = 0;
+        fileIndex = 0;
     }
 
     private void Update()
@@ -25,10 +25,10 @@ public class Select : MonoBehaviour {
     void SetOption() {
         option1 = GameObject.Find("Option_1_Button");
         //Se optiene el nombre del archivo
-        Debug.Log(file_index);
+        Debug.Log(fileIndex);
         if (GameManager.files.Length > 0)
         {
-            fileName = Path.GetFileName(GameManager.files[file_index]);
+            fileName = Path.GetFileName(GameManager.files[fileIndex]);
             //Se asigna la temática del juego
             GameManager.SetGameThematic(fileName.Substring(0,fileName.IndexOf(".txt")));
             //Se asigna el texto al botón de temática
@@ -43,10 +43,17 @@ public class Select : MonoBehaviour {
     }
 
     public void IncreaseIndex() {
-        if (file_index + 1 < GameManager.files.Length) file_index++;
+        if (fileIndex + 1 < GameManager.files.Length)
+        {
+            fileIndex++;
+        } else
+        {
+            fileIndex = 0;
+        }
     }
     public void DecreaseIndex() {
-        if (file_index > 0) file_index--;
+        if (fileIndex > 0) fileIndex--;
+        else fileIndex = GameManager.files.Length - 1;
     }
     public void GoBack() {
         SceneManager.LoadScene("Menu");
