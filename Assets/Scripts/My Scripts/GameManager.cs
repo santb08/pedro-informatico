@@ -7,7 +7,7 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    // @constants
+    private static int currentScore = 0;
     public static int CurrentLevel = 1;
     public static string directory = @"Assets\\Config\\";
     public static string GameThematic = "​";
@@ -64,10 +64,17 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
  
     private static string[] Format(string stringLine) {
         //Formatear cada respuesta
 		return stringLine.Split("%%%%".ToCharArray(),StringSplitOptions.RemoveEmptyEntries);
+    }
+
+    public static int GetCurrentScore() {
+        return currentScore;
+    }
+
+    public static void IncreaseScore() {
+        currentScore++; 
     }
 }
