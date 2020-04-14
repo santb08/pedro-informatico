@@ -30,6 +30,7 @@ public class Select : MonoBehaviour {
             fileName = Path.GetFileName(GameManager.files[fileIndex]);
             //Se asigna la temática del juego
             GameManager.SetGameThematic(fileName.Substring(0,fileName.IndexOf(".txt")));
+            GameManager.FormatQuestions();
             //Se asigna el texto al botón de temática
             option1.GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GameThematic;
         }

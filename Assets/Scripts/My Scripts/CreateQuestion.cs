@@ -21,16 +21,8 @@ public class CreateQuestion : MonoBehaviour
 
     void Update()
     {
-        this.RenderQuestions(GameManager.CurrentLevel-1);
+        RenderQuestions();
     }
-
-    IEnumerator TypeText(string message) {
-		foreach (char letter in message.ToCharArray()) {
-            propText.text += letter;
-			yield return new WaitForSeconds(TEXT_TYPING_DELAY_TIME);
-		}
-
-	}
 
     private void HandleUserInput() {
         if (Input.GetKey(KeyCode.Keypad1) || Input.GetKey(KeyCode.Alpha1)) {
@@ -44,7 +36,12 @@ public class CreateQuestion : MonoBehaviour
         }
     }
 
-    public void RenderQuestions(int lvl) {
+    public void RenderQuestions() {
+        if(this.objKey == null)
+        {
+            SceneManager.LoadScene("QuestionScreen");
+        }
+        /* COMO SE VERIFICA LA ENTRADA
         if (userIndexInput > 0) {
             if (userIndexInput == questions[lvl].correctAnswerIndex) {
                 GameManager.IncreaseScore();
@@ -52,18 +49,18 @@ public class CreateQuestion : MonoBehaviour
             if (scene.buildIndex < 7)
             {
                 int tempIndex = scene.buildIndex + 1;
-                SceneManager.LoadScene(tempIndex);
+                SceneManager.LoadScene("QuestionScreen");
             }
             if (GameManager.CurrentLevel < 3) GameManager.CurrentLevel++;
         } else {
             //Debug.Log("NOOOo");
         }
-
-        if (this.questionRendered) return;
-        if (this.objKey == null) {
-            StartCoroutine(TypeText(questions[lvl].ToString()));
-            this.questionRendered = true;
-        }
-        this.HandleUserInput();
+        */
+        //if (this.questionRendered) return;
+        //if (this.objKey == null) {
+        //    StartCoroutine(TypeText(questions[lvl].ToString()));
+        //    this.questionRendered = true;
+        //}
+        //this.HandleUserInput();
     }
 }

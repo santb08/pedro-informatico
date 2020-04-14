@@ -10,7 +10,7 @@ public class Settings : MonoBehaviour
     }
 
     public void GoInput() { 
-        SceneManager.LoadScene("Input");
+        SceneManager.LoadScene("InputThematic");
     }
 
     public void GoDeleteMenu()
