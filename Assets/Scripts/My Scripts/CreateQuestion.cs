@@ -7,6 +7,7 @@ public class CreateQuestion : MonoBehaviour
 {
     [SerializeField] GameObject objKey;
     [SerializeField] Text propText;
+
     Scene scene;
     private QuestionClass[] questions;
     private bool questionRendered = false;
@@ -44,7 +45,6 @@ public class CreateQuestion : MonoBehaviour
     }
 
     public void RenderQuestions(int lvl) {
-        this.HandleUserInput();
         if (userIndexInput > 0) {
             if (userIndexInput == questions[lvl].correctAnswerIndex) {
                 GameManager.IncreaseScore();
@@ -64,5 +64,6 @@ public class CreateQuestion : MonoBehaviour
             StartCoroutine(TypeText(questions[lvl].ToString()));
             this.questionRendered = true;
         }
+        this.HandleUserInput();
     }
 }
