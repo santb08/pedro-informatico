@@ -9,7 +9,6 @@ public class RenderScore : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("HOLA");
         Debug.Log(GameManager.GetCurrentScore());
         propText.text = string.Format(propText.text, GameManager.GetCurrentScore());        
     }

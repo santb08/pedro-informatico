@@ -25,7 +25,6 @@ public class Select : MonoBehaviour {
     void SetOption() {
         option1 = GameObject.Find("Option_1_Button");
         //Se optiene el nombre del archivo
-        Debug.Log(fileIndex);
         if (GameManager.files.Length > 0)
         {
             fileName = Path.GetFileName(GameManager.files[fileIndex]);
