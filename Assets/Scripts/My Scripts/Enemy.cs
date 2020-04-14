@@ -6,7 +6,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
     public float walkSpeed;
     Rigidbody2D key;
-    [SerializeField] LayerMask layerMaskKey;
+    [SerializeField] LayerMask layerMaskKey, layerMaskPlayer;
+    [SerializeField] bool isObstacle;
     private bool killPlayer = false; //Se indica si se esta siguiendo al juagador
     private bool square; //Indica si se llego a una esquina
     Vector3 currentPosition; //Indica la posisción actualizada del enemigo
@@ -17,8 +18,8 @@ public class Enemy : MonoBehaviour {
     GameObject player, enemy; 
     Vector3 initialPosition;
     // Start is called before the first frame update
-    void Start () {
-        player = GameObject.FindGameObjectWithTag ("Player"); //Se le da un tag para que sepa a quien debe buscar
+    void Start() {
+        player = GameObject.FindGameObjectWithTag("Player"); //Se le da un tag para que sepa a quien debe buscar
         key = GameObject.Find("Key").GetComponent<Rigidbody2D>();
         enemy = GameObject.FindGameObjectWithTag("Enemy");
         initialPosition = transform.position;
@@ -28,20 +29,20 @@ public class Enemy : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (killPlayer == false) {
+        if (killPlayer == false && isObstacle == false) {
             Walk (walkSpeed);
         }
 
-        float dX = player.transform.position[0] - this.transform.position[0];
-        float dY = player.transform.position[1];
+        //float dX = player.transform.position[0] - this.transform.position[0];
+        //float dY = player.transform.position[1];
 
-        if (dX < 0) {
-            dX = -dX;
-        }
+        //if (dX < 0) {
+        //    dX = -dX;
+        //}
 
-        if ((dX >= 2.9 && dX <= 7.2) && (dY <= 0.1 && dY >= -3.2)) {
-            Destroy (player);
-        }
+        //if ((dX >= 2.9 && dX <= 7.2) && (dY <= 0.1 && dY >= -3.2)) {
+        //    Destroy (player);
+        //}
         currentPosition = transform.position;
         ChangeDirection ();
     }
@@ -69,6 +70,14 @@ public class Enemy : MonoBehaviour {
                 Debug.Log(key.velocity.x);
             }
             Destroy(enemy);
+        }
+        if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
+        {
+            if (Math.Abs(key.velocity.x) > 2)
+            {
+                Debug.Log(key.velocity.x);
+            }
+            Destroy(collision.gameObject);
         }
     }
 
