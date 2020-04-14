@@ -7,13 +7,15 @@ public class CreateQuestion : MonoBehaviour
 {
     [SerializeField] GameObject objKey;
     [SerializeField] Text propText;
+    Scene scene;
     private QuestionClass[] questions;
     private bool questionRendered = false;
     private const float TEXT_TYPING_DELAY_TIME = 0.05f;
     private int userIndexInput = -1;
 
     void Start() {
-        questions = GameManager.GetQuestions(); 
+        questions = GameManager.GetQuestions();
+        scene = SceneManager.GetActiveScene();
     }
 
     void Update()
@@ -45,10 +47,13 @@ public class CreateQuestion : MonoBehaviour
         this.HandleUserInput();
         if (userIndexInput > 0) {
             if (userIndexInput == questions[lvl].correctAnswerIndex) {
-                //Sumar puntos
-                //Debug.Log("Hola");
+                GameManager.IncreaseScore();
             }
-            SceneManager.LoadScene("Level_2");
+            if (scene.buildIndex < 7)
+            {
+                int tempIndex = scene.buildIndex + 1;
+                SceneManager.LoadScene(tempIndex);
+            }
             if (GameManager.CurrentLevel < 3) GameManager.CurrentLevel++;
         } else {
             //Debug.Log("NOOOo");
@@ -60,5 +65,4 @@ public class CreateQuestion : MonoBehaviour
             this.questionRendered = true;
         }
     }
-
 }

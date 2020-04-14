@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public static string directory = @"Assets\\Config\\";
     public static string GameThematic = "​";
     // private string thematic;
+    private static AssetBundle myAssetBundle;
+    public static string[] scenePaths;
     public static string[] files;
     private static string[] questionsFile;
     private static QuestionClass[] questions = new QuestionClass[3];
