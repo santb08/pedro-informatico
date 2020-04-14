@@ -15,13 +15,12 @@ public class Enemy : MonoBehaviour {
     Vector3 f; //Ojetivo derecha
     Vector3 h; //Objetivo izquierda
 
-    GameObject player, enemy; 
+    GameObject player; 
     Vector3 initialPosition;
     // Start is called before the first frame update
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player"); //Se le da un tag para que sepa a quien debe buscar
         key = GameObject.Find("Key").GetComponent<Rigidbody2D>();
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
         initialPosition = transform.position;
         currentPosition = new Vector3 ();
         square = false;
@@ -65,7 +64,7 @@ public class Enemy : MonoBehaviour {
     {
         if (collision.gameObject.layer == Mathf.Log(layerMaskKey.value, 2))
         {
-            Destroy(enemy);
+            Destroy(gameObject);
         }
         if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
         {
