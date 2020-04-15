@@ -5,21 +5,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     Vector3 initialPosition;
-    [SerializeField] LayerMask layerMaskKey, layerMaskPlayer;
+    [SerializeField] LayerMask layerMaskKey, layerMaskPlayer, platformsLayerMask;
     [SerializeField] int distanceToRotate = 10;
+    private BoxCollider2D boxCollider2d;
+    private GameObject player;
     private Rigidbody2D rigidbody2D;
-    private int direction = 1;
     public float speed = 3;
-    
+    public float direction = 1;
+
     void Start() {
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
         rigidbody2D = transform.GetComponent<Rigidbody2D>();
+        boxCollider2d = transform.GetComponent<BoxCollider2D>();
         initialPosition = transform.position;
     }
 
     void Update () {
         rigidbody2D.velocity = new Vector2(speed * direction, rigidbody2D.velocity.y);
-
         transform.rotation = Quaternion.identity;
+
         ChangeDirection();
     }
 
@@ -36,10 +40,13 @@ public class Enemy : MonoBehaviour {
     }
 
     private void ChangeDirection() {
-        float distance = Vector3.Distance(transform.position, initialPosition);
+        direction = (player.transform.position - transform.position).normalized.x;
+    }
 
-        if (distance > distanceToRotate) {
-
-        }
+    private bool DidHitWall() 
+    {
+        RaycastHit2D rightRaycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.right, .1f, platformsLayerMask);
+        RaycastHit2D leftRaycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.left, .1f, platformsLayerMask);
+        return rightRaycastHit2d.collider != null || leftRaycastHit2d.collider != null;
     }
 }
