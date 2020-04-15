@@ -39,7 +39,7 @@ public class Select : MonoBehaviour {
     public void Play()
     {
         if (GameManager.files.Length > 0) SceneManager.LoadScene("Level_1");
-        else SceneManager.LoadScene("Input");
+        else SceneManager.LoadScene("InputThematic");
     }
 
     public void ShowThematic()

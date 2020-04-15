@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour {
     Vector3 initialPosition;
@@ -36,6 +37,7 @@ public class Enemy : MonoBehaviour {
         if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
         {
             Destroy(collision.gameObject);
+            SceneManager.LoadScene(scene.name);
         }
     }
 
