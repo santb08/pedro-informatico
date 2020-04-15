@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QuestionScreen.unity
     guid: 3d49cede0aa7a76498972b344f25042c
+  - enabled: 1
+    path: Assets/Scenes/ThematicQuestions.unity
+    guid: d9a430102197d6e4c9177c517ea571d4
+  - enabled: 1
+    path: Assets/Scenes/Thematics.unity
+    guid: 6351c845294f28947a9a8fb6d0db73e1
   m_configObjects: {}

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public static string[] scenePaths;
     public static string[] files;
     private static string[] questionsFile;
-    private static QuestionClass[] questions = new QuestionClass[3];
+    private static List<QuestionClass> questions = new List<QuestionClass>();
     
     static GameManager() {
         files = Directory.GetFiles("Assets\\Config\\", "*.txt");
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         return GameThematic;
     }
 
-    public static QuestionClass[] GetQuestions()
+    public static List<QuestionClass> GetQuestions()
     {
         return questions;
     }
@@ -51,18 +51,19 @@ public class GameManager : MonoBehaviour
         //Obtener archivo que contiene las preguntas
         var match = files.FirstOrDefault(stringToCheck => stringToCheck.Contains(GameThematic));
         //Se guarda en un array cada linea del archivo
+        questions.Clear();
         if (match != null)
         {
             questionsFile = File.ReadAllLines(match);
             for (int i = 0; i < questionsFile.Length; i++)
             {
-                questions[i] = new QuestionClass(
+                questions.Add(new QuestionClass(
                     i,
                     questionsFile[i].Substring(0, questionsFile[i].IndexOf("%%")),
                     //Array de respuestas
                     Format(questionsFile[i].Substring(questionsFile[i].IndexOf("%%"))),
                     //Respuesta correcta
-                    1);
+                    1));
             }
         }
     }

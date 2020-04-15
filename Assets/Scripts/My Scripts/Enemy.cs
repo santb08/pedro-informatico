@@ -68,10 +68,10 @@ public class Enemy : MonoBehaviour {
         }
         if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
         {
-            if (Math.Abs(key.velocity.x) > 2)
-            {
-                Debug.Log(key.velocity.x);
-            }
+            //if (Math.Abs(key.velocity.x) > 2)
+            //{
+            //    Debug.Log(key.velocity.x);
+            //}
             Destroy(collision.gameObject);
         }
     }

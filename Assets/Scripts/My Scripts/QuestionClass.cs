@@ -23,7 +23,7 @@ public class QuestionClass
     {
         string correctAnswer = answers[0];
 
-        for (int t = 0; t < answers.Length; t++)
+        for (int t = 0; t < 3; t++)
         {
             string tmp = answers[t];
             int r = UnityEngine.Random.Range(t, answers.Length);

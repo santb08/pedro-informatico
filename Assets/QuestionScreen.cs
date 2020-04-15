@@ -18,12 +18,12 @@ public class QuestionScreen : MonoBehaviour
     void Start()
     {
         //Se obtienen las preguntas
-        if (GameManager.GetQuestions().Length == 1)
+        if (GameManager.GetQuestions().Count == 1)
         {
             questionIndex = 0;
         } else
         {
-            questionIndex = rand.Next(GameManager.GetQuestions().Length - 1);
+            questionIndex = rand.Next(GameManager.GetQuestions().Count - 1);
         }
         ShowQuestion();
         GameManager.FormatQuestions();
