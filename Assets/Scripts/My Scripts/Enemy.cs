@@ -37,8 +37,11 @@ public class Enemy : MonoBehaviour {
     {
         if (collision.gameObject.layer == Mathf.Log(layerMaskKey.value, 2))
         {
-            Destroy(gameObject);
-            GameManager.IncreaseScore();
+            Rigidbody2D rigidbody2DKey = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (rigidbody2DKey.velocity.magnitude > 2) {
+                Destroy(gameObject);
+                GameManager.IncreaseScore();
+            }
         }
         if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
         {

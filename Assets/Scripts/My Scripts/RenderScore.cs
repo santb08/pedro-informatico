@@ -7,9 +7,8 @@ public class RenderScore : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI propText = null; 
 
-    void Start()
+    void Update()
     {
-        Debug.Log(GameManager.GetCurrentScore());
         propText.text = string.Format(propText.text, GameManager.GetCurrentScore());        
     }
 }
