@@ -18,7 +18,13 @@ public class QuestionScreen : MonoBehaviour
     void Start()
     {
         //Se obtienen las preguntas
-        questionIndex = rand.Next(GameManager.GetQuestions().Length - 1);
+        if (GameManager.GetQuestions().Length == 1)
+        {
+            questionIndex = 0;
+        } else
+        {
+            questionIndex = rand.Next(GameManager.GetQuestions().Length - 1);
+        }
         ShowQuestion();
         GameManager.FormatQuestions();
     }
@@ -27,7 +33,12 @@ public class QuestionScreen : MonoBehaviour
     {
         //Inicializar pregunta        
         question = GameManager.GetQuestions()[questionIndex];
-        enunciado.text = GameManager.GetQuestions()[questionIndex].ToString();
+        if (GameManager.GetQuestions()[questionIndex] != null)
+        {
+            Debug.Log("Index: " + questionIndex);
+            Debug.Log("Elemento: " + GameManager.GetQuestions()[questionIndex]);
+            enunciado.text = GameManager.GetQuestions()[questionIndex].ToString();
+        }
     }
     // Update is called once per frame
     void Update()

@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class DeleteThematicMenu : MonoBehaviour
 {
-    public GameObject thematicButton;
+    public GameObject thematicView;
     public Button nextThematicBtn;
     private string thematicToDelete;
     string fileName;
@@ -26,15 +26,15 @@ public class DeleteThematicMenu : MonoBehaviour
 
     void SetOption()
     {
-        thematicButton = GameObject.Find("Delete_Thematic_Button");
+        thematicView = GameObject.Find("Thematic_View");
         //Se optiene el nombre del archivo
         if (GameManager.files.Length > 0)
         {
             fileName = Path.GetFileName(GameManager.files[file_index]);
             thematicToDelete = fileName.Substring(0, fileName.IndexOf(".txt"));
             //Se asigna el texto al botón de eliminar temática
-            thematicButton.GetComponentInChildren<TextMeshProUGUI>().text = thematicToDelete;
-        } else thematicButton.GetComponentInChildren<TextMeshProUGUI>().text = "Sin Temáticas";
+            thematicView.GetComponentInChildren<TextMeshProUGUI>().text = thematicToDelete;
+        } else thematicView.GetComponentInChildren<TextMeshProUGUI>().text = "Sin Temáticas";
     }
 
     public void DeleteThematic()
