@@ -8,7 +8,7 @@ public class CreateQuestion : MonoBehaviour
     [SerializeField] GameObject objKey;
     [SerializeField] Text propText;
 
-    //Scene scene;
+    Scene scene;
     //private QuestionClass[] questions;
     //private bool questionRendered = false;
     //private const float TEXT_TYPING_DELAY_TIME = 0.05f;
@@ -16,7 +16,7 @@ public class CreateQuestion : MonoBehaviour
 
     void Start() {
         //questions = GameManager.GetQuestions();
-        //scene = SceneManager.GetActiveScene();
+        scene = SceneManager.GetActiveScene();
     }
 
     void Update()
@@ -27,6 +27,7 @@ public class CreateQuestion : MonoBehaviour
     public void RenderQuestions() {
         if(this.objKey == null)
         {
+            GameManager.lastLvl = scene.name;
             SceneManager.LoadScene("QuestionScreen");
         }
         {/* COMO SE VERIFICA LA ENTRADA

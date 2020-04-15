@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public static string[] scenePaths;
     public static string[] files;
     private static string[] questionsFile;
+    public static string lastLvl = "Level_1";
     private static List<QuestionClass> questions = new List<QuestionClass>();
     
     static GameManager() {

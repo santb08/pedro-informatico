@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour {
     Rigidbody2D key;
@@ -12,12 +13,14 @@ public class Enemy : MonoBehaviour {
     private Rigidbody2D rigidbody2D;
     private int direction;
     public float speed;
+    Scene scene;
     
     void Start() {
         rigidbody2D = GetComponent<Rigidbody2D>();
         key = GameObject.Find("Key").GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
         currentPosition = new Vector3 ();
+        scene = SceneManager.GetActiveScene();
     }
 
     void Update () {
@@ -36,11 +39,8 @@ public class Enemy : MonoBehaviour {
         }
         if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
         {
-            //if (Math.Abs(key.velocity.x) > 2)
-            //{
-            //    Debug.Log(key.velocity.x);
-            //}
             Destroy(collision.gameObject);
+            SceneManager.LoadScene(scene.name);
         }
     }
 
