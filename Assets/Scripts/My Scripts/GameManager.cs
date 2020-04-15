@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         if (match != null)
         {
             questionsFile = File.ReadAllLines(match);
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < questionsFile.Length; i++)
             {
                 questions[i] = new QuestionClass(
                     i,

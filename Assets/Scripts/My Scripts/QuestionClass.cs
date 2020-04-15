@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class QuestionClass
 {
-    private string FORMAT_QUESTION = "Pregunta #{0}: \n {1} \n{2}";
+    private string FORMAT_QUESTION = "Pregunta: \n {0} \n{1}";
     private string FORMAT_ANSWER = "{0} - {1} \n";
 
     public int correctAnswerIndex;
@@ -65,6 +65,6 @@ public class QuestionClass
             question += string.Format(this.FORMAT_ANSWER, i+1, answers[i]);
         }
 
-        return string.Format(this.FORMAT_QUESTION, this.id+1, this.questionContent, question);
+        return string.Format(this.FORMAT_QUESTION, this.questionContent, question);
     }
 }

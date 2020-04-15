@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings.unity
     guid: 35da2757a4caf5e41886f8f2f0c9067a
   - enabled: 1
-    path: Assets/Scenes/Input.unity
+    path: Assets/Scenes/InputThematic.unity
     guid: 964d80415f6e2cf46927a0cc5c6693dc
   - enabled: 1
     path: Assets/Scenes/Level_1.unity
@@ -30,9 +30,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_3.unity
     guid: 629ef25aca45b9d418b647bb6562b142
   - enabled: 1
+    path: Assets/Scenes/InputQuestions.unity
+    guid: 98f86069f6c033548a6ae3f21b60f850
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 638b3b2c9898cf6418e127e7fa47f8e7
   - enabled: 1
     path: Assets/Scenes/DeleteMenu.unity
     guid: 515982be1909d774f980289cbf1149b1
+  - enabled: 1
+    path: Assets/Scenes/QuestionScreen.unity
+    guid: 3d49cede0aa7a76498972b344f25042c
   m_configObjects: {}
