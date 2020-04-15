@@ -35,8 +35,6 @@ public class QuestionScreen : MonoBehaviour
         question = GameManager.GetQuestions()[questionIndex];
         if (GameManager.GetQuestions()[questionIndex] != null)
         {
-            Debug.Log("Index: " + questionIndex);
-            Debug.Log("Elemento: " + GameManager.GetQuestions()[questionIndex]);
             enunciado.text = GameManager.GetQuestions()[questionIndex].ToString();
         }
     }
@@ -98,37 +96,38 @@ public class QuestionScreen : MonoBehaviour
     //Actualiza el numero del nivel y pasa al siguiente nivel
     void CheckLevelToPass()
     {
-        if(GameManager.CurrentLevel == 1)
+        switch (GameManager.lastLvl)
         {
-            GameManager.CurrentLevel = 2;
-            SceneManager.LoadScene("Level_2");
-            return;
-        }
-        if(GameManager.CurrentLevel == 2)
-        {
-            GameManager.CurrentLevel = 3;
-            SceneManager.LoadScene("Level_3");
-        }
-        if (GameManager.CurrentLevel == 3)
-        {
-            SceneManager.LoadScene("GameOver");
+            case "Level_1":
+                SceneManager.LoadScene("Level_2");
+                break;
+            case "Level_2":
+                SceneManager.LoadScene("Level_3");
+                break;
+            case "Level_3":
+                SceneManager.LoadScene("GameOver");
+                break;
+            default:
+                break;
         }
     }
 
     // Reinicia el nivel si falla al responder la pregunta
     void ResetForFail()
     {
-        if (GameManager.CurrentLevel == 1)
+        switch (GameManager.lastLvl)
         {
-            SceneManager.LoadScene("Level_1");
-        }
-        else if (GameManager.CurrentLevel == 2)
-        {
-            SceneManager.LoadScene("Level_2");
-        }
-        else if (GameManager.CurrentLevel == 3)
-        {
-            SceneManager.LoadScene("Level_3");
+            case "Level_1":
+                SceneManager.LoadScene("Level_1");
+                break;
+            case "Level_2":
+                SceneManager.LoadScene("Level_2");
+                break;
+            case "Level_3":
+                SceneManager.LoadScene("Level_3");
+                break;
+            default:
+                break;
         }
     }
 }

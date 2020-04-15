@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour {
     Vector3 initialPosition;
     [SerializeField] LayerMask layerMaskKey, layerMaskPlayer;
     [SerializeField] int distanceToRotate = 10;
     private Rigidbody2D rigidbody2D;
+    Scene scene;
     private int direction = 1;
     public float speed = 3;
     
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour {
         if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
         {
             Destroy(collision.gameObject);
+            SceneManager.LoadScene(scene.name);
         }
     }
 
