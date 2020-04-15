@@ -40772,45 +40772,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2566189704233196855, guid: b470770d9d8384847b719c1b9bf91f37,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566189704233196855, guid: b470770d9d8384847b719c1b9bf91f37,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566189704233196855, guid: b470770d9d8384847b719c1b9bf91f37,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566189704233196857, guid: b470770d9d8384847b719c1b9bf91f37,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566189704233196857, guid: b470770d9d8384847b719c1b9bf91f37,
-        type: 3}
-      propertyPath: platformsLayerMask.m_Bits
-      value: 8448
-      objectReference: {fileID: 0}
     - target: {fileID: 2566189704233196858, guid: b470770d9d8384847b719c1b9bf91f37,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566189704233196859, guid: b470770d9d8384847b719c1b9bf91f37,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566189704233196859, guid: b470770d9d8384847b719c1b9bf91f37,
-        type: 3}
-      propertyPath: m_Mass
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b470770d9d8384847b719c1b9bf91f37, type: 3}
