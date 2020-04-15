@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour {
     private GameObject player;
     private Rigidbody2D rigidbody2D;
     public float speed = 3;
-    public float direction = 1;
+    private Vector2 direction = new Vector2();
     private Scene scene;
 
     void Start() {
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour {
     }
 
     void Update () {
-        rigidbody2D.velocity = new Vector2(speed * direction, rigidbody2D.velocity.y);
+        rigidbody2D.velocity = new Vector2(speed * direction.x, speed * direction.y);
         transform.rotation = Quaternion.identity;
 
         if (player != null)
@@ -39,8 +39,8 @@ public class Enemy : MonoBehaviour {
         {
             Rigidbody2D rigidbody2DKey = collision.gameObject.GetComponent<Rigidbody2D>();
             if (rigidbody2DKey.velocity.magnitude > 2) {
-                Destroy(gameObject);
                 GameManager.IncreaseScore();
+                Destroy(gameObject);
             }
         }
         if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour {
     }
 
     private void ChangeDirection() {
-        direction = (player.transform.position - transform.position).normalized.x;
+        direction = (player.transform.position - transform.position).normalized;
     }
 
     private bool DidHitWall() 
