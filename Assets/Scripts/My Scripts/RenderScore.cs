@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class RenderScore : MonoBehaviour
 {
-    [SerializeField] Text propText = null; 
+    [SerializeField] TextMeshProUGUI propText = null; 
 
     void Start()
     {
