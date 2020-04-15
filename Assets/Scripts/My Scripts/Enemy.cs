@@ -4,27 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    Rigidbody2D key;
-    Vector3 currentPosition; 
     Vector3 initialPosition;
     [SerializeField] LayerMask layerMaskKey, layerMaskPlayer;
     [SerializeField] int distanceToRotate = 10;
     private Rigidbody2D rigidbody2D;
-    private int direction;
-    public float speed;
+    private int direction = 1;
+    public float speed = 3;
     
     void Start() {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        key = GameObject.Find("Key").GetComponent<Rigidbody2D>();
+        rigidbody2D = transform.GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
-        currentPosition = new Vector3 ();
     }
 
     void Update () {
+        rigidbody2D.velocity = new Vector2(speed * direction, rigidbody2D.velocity.y);
 
-
-        currentPosition = transform.position;
-
+        transform.rotation = Quaternion.identity;
         ChangeDirection();
     }
 
@@ -36,10 +31,6 @@ public class Enemy : MonoBehaviour {
         }
         if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
         {
-            //if (Math.Abs(key.velocity.x) > 2)
-            //{
-            //    Debug.Log(key.velocity.x);
-            //}
             Destroy(collision.gameObject);
         }
     }
