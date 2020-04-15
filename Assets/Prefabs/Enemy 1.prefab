@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 825132062328922556}
   - component: {fileID: 825132062328922499}
   - component: {fileID: 2014086449001202433}
+  - component: {fileID: 2083631889}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -85,10 +86,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614d07635c4278e45baf340578b12b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 1
   layerMaskKey:
     serializedVersion: 2
     m_Bits: 2048
+  layerMaskPlayer:
+    serializedVersion: 2
+    m_Bits: 512
+  distanceToRotate: 10
+  speed: 2
 --- !u!212 &825132062328922499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -156,3 +161,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &2083631889
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825132062328922496}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0.97
+  m_AngularDrag: 0.16
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

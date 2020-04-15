@@ -5,29 +5,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour {
-    Rigidbody2D key;
-    Vector3 currentPosition; 
     Vector3 initialPosition;
     [SerializeField] LayerMask layerMaskKey, layerMaskPlayer;
     [SerializeField] int distanceToRotate = 10;
     private Rigidbody2D rigidbody2D;
-    private int direction;
-    public float speed;
     Scene scene;
+    private int direction = 1;
+    public float speed = 3;
     
     void Start() {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        key = GameObject.Find("Key").GetComponent<Rigidbody2D>();
+        rigidbody2D = transform.GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
-        currentPosition = new Vector3 ();
-        scene = SceneManager.GetActiveScene();
     }
 
     void Update () {
+        rigidbody2D.velocity = new Vector2(speed * direction, rigidbody2D.velocity.y);
 
-
-        currentPosition = transform.position;
-
+        transform.rotation = Quaternion.identity;
         ChangeDirection();
     }
 
