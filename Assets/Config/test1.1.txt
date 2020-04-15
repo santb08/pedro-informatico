@@ -1,0 +1,4 @@
+enun1%%%%res1%%%%res2%%%%res3
+enunciado2%%%%t1%%%%t2%%%%t3
+enunciado3%%%%y1%%%%y2%%%%y3
+enunciado4%%%%p1%%%%p2%%%%p3

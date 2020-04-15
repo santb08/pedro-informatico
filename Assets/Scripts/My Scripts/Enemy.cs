@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour {
     void Start() {
         rigidbody2D = transform.GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
+        scene = SceneManager.GetActiveScene();
     }
 
     void Update () {
