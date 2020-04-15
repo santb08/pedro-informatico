@@ -14,8 +14,11 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/6a8f38d7a0ec4714890dc65c0ac4e5f1
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: d7d5698c215aca24aa487a36138a7679
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
     guid: 6a8f38d7a0ec4714890dc65c0ac4e5f1
   - enabled: 1
     path: Assets/Scenes/Level_1.unity

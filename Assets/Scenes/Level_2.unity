@@ -37516,12 +37516,22 @@ PrefabInstance:
     - target: {fileID: 3988973282076934080, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
       propertyPath: m_Size.y
-      value: 10
+      value: 9.56007
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934080, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
       propertyPath: m_Size.x
-      value: 20
+      value: 18.698792
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988973282076934080, guid: 18e9376df1a024442a40044e6e39d169,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.65060425
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988973282076934080, guid: 18e9376df1a024442a40044e6e39d169,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.21996498
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
@@ -37531,13 +37541,17 @@ PrefabInstance:
     - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
       propertyPath: hint
-      value: "Agh, los desarrolladores no completaron este camino. \xBFY si usamos
-        la llave para salir de aqu\xED?"
+      value: 'Pista: Usa la llave'
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
       propertyPath: layerPlayer.m_Bits
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
+        type: 3}
+      propertyPath: r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934083, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
@@ -38197,6 +38211,11 @@ PrefabInstance:
       propertyPath: objKey
       value: 
       objectReference: {fileID: 696628315}
+    - target: {fileID: 6446620177291386699, guid: 1eef7120f767e6e4583384fd4709a5ac,
+        type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 8719067503478455710}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eef7120f767e6e4583384fd4709a5ac, type: 3}
 --- !u!1001 &7509158320681685388
@@ -38348,12 +38367,12 @@ PrefabInstance:
     - target: {fileID: 27964756578322744, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -100
+      value: -243
       objectReference: {fileID: 0}
     - target: {fileID: 27964756578322744, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 27964756578322744, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
         type: 3}
@@ -38400,5 +38419,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score
       objectReference: {fileID: 0}
+    - target: {fileID: 4657110729107455405, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4889cabb99fbe1498cd68cb1bc00ffc, type: 3}
+--- !u!114 &8719067503478455710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4657110729107455405, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8719067503478455709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
