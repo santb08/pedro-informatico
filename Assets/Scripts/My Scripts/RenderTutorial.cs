@@ -9,8 +9,13 @@ public class RenderTutorial : MonoBehaviour
     public Text txtTutorial;
     public string hint;
 
+    private void Start()
+    {
+        //txtTutorial.fontSize = 28;
+    }
     void OnTriggerEnter2D(Collider2D collision) {
-        txtTutorial.text = hint;
+        txtTutorial.text = hint; 
+        txtTutorial.resizeTextForBestFit = true;
     }
     
     void OnTriggerExit2D(Collider2D collision) {
