@@ -8,15 +8,15 @@ public class CreateQuestion : MonoBehaviour
     [SerializeField] GameObject objKey;
     [SerializeField] Text propText;
 
-    Scene scene;
-    private QuestionClass[] questions;
-    private bool questionRendered = false;
-    private const float TEXT_TYPING_DELAY_TIME = 0.05f;
-    private int userIndexInput = -1;
+    //Scene scene;
+    //private QuestionClass[] questions;
+    //private bool questionRendered = false;
+    //private const float TEXT_TYPING_DELAY_TIME = 0.05f;
+    //private int userIndexInput = -1;
 
     void Start() {
-        questions = GameManager.GetQuestions();
-        scene = SceneManager.GetActiveScene();
+        //questions = GameManager.GetQuestions();
+        //scene = SceneManager.GetActiveScene();
     }
 
     void Update()
@@ -24,24 +24,12 @@ public class CreateQuestion : MonoBehaviour
         RenderQuestions();
     }
 
-    private void HandleUserInput() {
-        if (Input.GetKey(KeyCode.Keypad1) || Input.GetKey(KeyCode.Alpha1)) {
-            userIndexInput = 1;
-        }
-        if (Input.GetKey(KeyCode.Keypad2) || Input.GetKey(KeyCode.Alpha2)) {
-            userIndexInput = 2;
-        }
-        if (Input.GetKey(KeyCode.Keypad3) || Input.GetKey(KeyCode.Alpha3)) {
-            userIndexInput = 3;
-        }
-    }
-
     public void RenderQuestions() {
         if(this.objKey == null)
         {
             SceneManager.LoadScene("QuestionScreen");
         }
-        /* COMO SE VERIFICA LA ENTRADA
+        {/* COMO SE VERIFICA LA ENTRADA
         if (userIndexInput > 0) {
             if (userIndexInput == questions[lvl].correctAnswerIndex) {
                 GameManager.IncreaseScore();
@@ -56,11 +44,12 @@ public class CreateQuestion : MonoBehaviour
             //Debug.Log("NOOOo");
         }
         */
-        //if (this.questionRendered) return;
-        //if (this.objKey == null) {
-        //    StartCoroutine(TypeText(questions[lvl].ToString()));
-        //    this.questionRendered = true;
-        //}
-        //this.HandleUserInput();
+            //if (this.questionRendered) return;
+            //if (this.objKey == null) {
+            //    StartCoroutine(TypeText(questions[lvl].ToString()));
+            //    this.questionRendered = true;
+            //}
+            //this.HandleUserInput();
+         }
     }
 }

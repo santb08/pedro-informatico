@@ -18,6 +18,10 @@ public class Settings : MonoBehaviour
         SceneManager.LoadScene("DeleteMenu");
     }
 
+    public void GoToSeeThematics()
+    {
+        SceneManager.LoadScene("Thematics");
+    }
 
     //public void DeleteAll() {
     //    System.IO.DirectoryInfo di = new DirectoryInfo("Assets\\Config\\");

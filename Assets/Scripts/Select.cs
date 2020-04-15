@@ -42,6 +42,11 @@ public class Select : MonoBehaviour {
         else SceneManager.LoadScene("Input");
     }
 
+    public void ShowThematic()
+    {
+        SceneManager.LoadScene("ThematicQuestions");
+    }
+
     public void IncreaseIndex() {
         if (fileIndex + 1 < GameManager.files.Length)
         {
