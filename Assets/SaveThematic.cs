@@ -11,10 +11,9 @@ public class SaveThematic : MonoBehaviour
     [SerializeField] TMP_InputField thematic;
     
 
-    private void Start()
+    public void GoBack()
     {
-        
-        
+        SceneManager.LoadScene("Settings");
     }
 
     public void Save()

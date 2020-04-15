@@ -13,19 +13,24 @@ public class Enemy : MonoBehaviour {
     private Rigidbody2D rigidbody2D;
     public float speed = 3;
     public float direction = 1;
+    private Scene scene;
 
     void Start() {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        player = GameObject.FindGameObjectWithTag("Player");
         rigidbody2D = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
         initialPosition = transform.position;
+        scene = SceneManager.GetActiveScene();
     }
 
     void Update () {
         rigidbody2D.velocity = new Vector2(speed * direction, rigidbody2D.velocity.y);
         transform.rotation = Quaternion.identity;
 
-        ChangeDirection();
+        if (player != null)
+        {
+            ChangeDirection();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -33,10 +38,15 @@ public class Enemy : MonoBehaviour {
         if (collision.gameObject.layer == Mathf.Log(layerMaskKey.value, 2))
         {
             Destroy(gameObject);
+            GameManager.IncreaseScore();
         }
         if (collision.gameObject.layer == Mathf.Log(layerMaskPlayer.value, 2))
         {
             Destroy(collision.gameObject);
+            if (GameManager.GetCurrentScore() > 0)
+            {
+                GameManager.DecreaseScore();
+            }
             SceneManager.LoadScene(scene.name);
         }
     }

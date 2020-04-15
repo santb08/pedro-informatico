@@ -81,4 +81,9 @@ public class GameManager : MonoBehaviour
     public static void IncreaseScore() {
         currentScore++; 
     }
+
+    public static void DecreaseScore()
+    {
+        currentScore--;
+    }
 }
