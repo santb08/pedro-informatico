@@ -31,7 +31,10 @@ public class QuestionFR : MonoBehaviour
     //Guardar y Salir
     public void SaveAndQuit()
     {
-        WriteFile();
+        if (enunciado.text != "" && correcta.text != "" && incorrecta1.text != "" && incorrecta2.text != "")
+        {
+            WriteFile();
+        }
         SceneManager.LoadScene("Settings");
     }
 

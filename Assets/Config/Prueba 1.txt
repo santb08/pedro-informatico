@@ -1,4 +1,0 @@
-enunciado1%%%%res1%%%%in1%%%%in12
-enunciado2%%%%res2%%%%in21%%%%in22
-en3%%%%r1%%%%r2%%%%r3
-er4%%%%re1%%%%re2%%%%re3

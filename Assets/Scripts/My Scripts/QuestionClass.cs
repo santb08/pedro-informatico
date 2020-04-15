@@ -22,11 +22,11 @@ public class QuestionClass
     string[] RandomizeAnswers(string[] answers)
     {
         string correctAnswer = answers[0];
-
         for (int t = 0; t < 3; t++)
         {
             string tmp = answers[t];
             int r = UnityEngine.Random.Range(t, answers.Length);
+            //Debug.Log(r + " and index: " +answers.Length);
             answers[t] = answers[r];
             answers[r] = tmp;
         }

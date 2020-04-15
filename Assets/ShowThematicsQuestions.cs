@@ -15,10 +15,14 @@ public class ShowThematicsQuestions : MonoBehaviour
     {
         thematic.text = GameManager.GameThematic;
         GameManager.FormatQuestions();
-        Debug.Log(GameManager.GetQuestions().Count);
         for (int i = 0; i < GameManager.GetQuestions().Count; i++)
         {
-            text += GameManager.GetQuestions()[i].QuestionContent + "\n";
+            string temp = "";
+            foreach (var answer in GameManager.GetQuestions()[i].Answers)
+            {
+                temp += "- " + answer + "\n";
+            }
+            text += "● "+GameManager.GetQuestions()[i].QuestionContent + "\n"+"\t" + temp;
         }
         questions.text = text;
     }
