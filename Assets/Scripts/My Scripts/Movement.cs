@@ -18,6 +18,19 @@ public class Movement : MonoBehaviour
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
     }
 
+    private bool DidHitWall(int dir) 
+    {
+        RaycastHit2D raycastHit2d = Physics2D.BoxCast(
+            boxCollider2d.bounds.center, 
+            boxCollider2d.bounds.size, 
+            0f, 
+            dir == 1 ? Vector2.right : Vector2.left, 
+            .1f, 
+            platformsLayerMask
+        );
+        return raycastHit2d.collider != null;
+    }
+
     private void Flip(int dir)
     {
         transform.localScale = new Vector2(dir * Mathf.Abs(transform.localScale.x), transform.localScale.y);
@@ -40,13 +53,17 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
+            if (!DidHitWall(-1)) {
+                rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
+            }
             this.Flip(-1);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            rigidbody2d.velocity = new Vector2(moveSpeed, rigidbody2d.velocity.y);
+            if (!DidHitWall(1)) {
+                rigidbody2d.velocity = new Vector2(moveSpeed, rigidbody2d.velocity.y);
+            }
             this.Flip(1);
         }
 

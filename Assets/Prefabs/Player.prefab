@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformsLayerMask:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 10496
   jumpVelocity: 30
   moveSpeed: 15
   animator: {fileID: 2566189704233196852}
