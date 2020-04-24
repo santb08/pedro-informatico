@@ -72,6 +72,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   txtTutorial: {fileID: 0}
   hint: Puedes usar las teclas W, A, S, D para moverte

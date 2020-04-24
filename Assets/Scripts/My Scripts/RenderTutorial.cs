@@ -15,9 +15,11 @@ public class RenderTutorial : MonoBehaviour
         //txtTutorial.fontSize = 28;
     }
     void OnTriggerEnter2D(Collider2D collision) {
-        txtTutorial.text = hint;
-        if (r) txtTutorial.color = Color.yellow;
-        txtTutorial.resizeTextForBestFit = true;
+        if (collision.gameObject.layer == Mathf.Log(layerPlayer.value, 2)) {
+            txtTutorial.text = hint;
+            if (r) txtTutorial.color = Color.yellow;
+            txtTutorial.resizeTextForBestFit = true;
+        }
     }
     
     void OnTriggerExit2D(Collider2D collision) {

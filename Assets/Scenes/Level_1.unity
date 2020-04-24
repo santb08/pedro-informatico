@@ -775,6 +775,11 @@ PrefabInstance:
       propertyPath: hint
       value: "Puedes usar la tecla W para saltar obst\xE1culos"
       objectReference: {fileID: 0}
+    - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
+        type: 3}
+      propertyPath: layerPlayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934083, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1380,6 +1385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: hint
       value: Si te cansan los robots, puedes intentar golpearlos con la llave
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
+        type: 3}
+      propertyPath: layerPlayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934083, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
@@ -29843,6 +29853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: hint
       value: Puedes moverte usando las teclas A, D
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
+        type: 3}
+      propertyPath: layerPlayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934083, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
