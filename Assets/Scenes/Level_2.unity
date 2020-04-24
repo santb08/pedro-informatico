@@ -36556,6 +36556,24 @@ Tilemap:
   m_GameObject: {fileID: 1556121753}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: 25, y: -1, z: 0}
+    second:
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 26, y: -1, z: 0}
+    second:
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: 45, y: 1, z: 0}
     second:
       m_TileIndex: 0
@@ -36702,13 +36720,13 @@ Tilemap:
       m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 16
+  - m_RefCount: 18
     m_Data: {fileID: 11400000, guid: 6edaabee820ebb64c839c84cb4675568, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 16
+  - m_RefCount: 18
     m_Data: {fileID: 21300270, guid: 540229b1cb65c4d48a0e5e829a4cfd6a, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 16
+  - m_RefCount: 18
     m_Data:
       e00: 1
       e01: 0
@@ -36727,12 +36745,12 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 16
+  - m_RefCount: 18
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -20, y: 0, z: 0}
-  m_Size: {x: 109, y: 2, z: 1}
+  m_Origin: {x: -20, y: -1, z: 0}
+  m_Size: {x: 109, y: 3, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -36927,6 +36945,26 @@ CompositeCollider2D:
         Y: 42500000
       - X: 4007499776
         Y: 42500000
+    - - X: 1217500032
+        Y: -42291668
+      - X: 1216458240
+        Y: -31875000
+      - X: 1212291712
+        Y: -29791668
+      - X: 1171666688
+        Y: -29791668
+      - X: 1170572935
+        Y: -31432301
+      - X: 1167291776
+        Y: -29791668
+      - X: 1126666752
+        Y: -29791668
+      - X: 1122499968
+        Y: -36041668
+      - X: 1122499968
+        Y: -47500000
+      - X: 1217500032
+        Y: -47500000
   m_CompositePaths:
     m_Paths:
     - - {x: 229.75, y: 4.7708335}
@@ -36989,6 +37027,16 @@ CompositeCollider2D:
       - {x: 377.74997, y: 5.3958335}
       - {x: 377.74997, y: 4.25}
       - {x: 400.74997, y: 4.25}
+    - - {x: 121.75001, y: -4.229167}
+      - {x: 121.64583, y: -3.1875}
+      - {x: 121.22917, y: -2.9791667}
+      - {x: 117.16667, y: -2.9791667}
+      - {x: 117.0573, y: -3.14323}
+      - {x: 116.72918, y: -2.9791667}
+      - {x: 112.66668, y: -2.9791667}
+      - {x: 112.25, y: -3.6041667}
+      - {x: 112.25, y: -4.75}
+      - {x: 121.75001, y: -4.75}
   m_VertexDistance: 0.0005
 --- !u!1 &1613781762
 GameObject:
@@ -37516,12 +37564,22 @@ PrefabInstance:
     - target: {fileID: 3988973282076934080, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
       propertyPath: m_Size.y
-      value: 10
+      value: 9.56007
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934080, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
       propertyPath: m_Size.x
-      value: 20
+      value: 18.698792
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988973282076934080, guid: 18e9376df1a024442a40044e6e39d169,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.65060425
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988973282076934080, guid: 18e9376df1a024442a40044e6e39d169,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.21996498
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
@@ -37531,13 +37589,17 @@ PrefabInstance:
     - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
       propertyPath: hint
-      value: "Agh, los desarrolladores no completaron este camino. \xBFY si usamos
-        la llave para salir de aqu\xED?"
+      value: 'Pista: Usa la llave'
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
       propertyPath: layerPlayer.m_Bits
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988973282076934081, guid: 18e9376df1a024442a40044e6e39d169,
+        type: 3}
+      propertyPath: r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3988973282076934083, guid: 18e9376df1a024442a40044e6e39d169,
         type: 3}
@@ -38197,6 +38259,11 @@ PrefabInstance:
       propertyPath: objKey
       value: 
       objectReference: {fileID: 696628315}
+    - target: {fileID: 6446620177291386699, guid: 1eef7120f767e6e4583384fd4709a5ac,
+        type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 8719067503478455710}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eef7120f767e6e4583384fd4709a5ac, type: 3}
 --- !u!1001 &7509158320681685388
@@ -38348,12 +38415,12 @@ PrefabInstance:
     - target: {fileID: 27964756578322744, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -100
+      value: -243
       objectReference: {fileID: 0}
     - target: {fileID: 27964756578322744, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 27964756578322744, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
         type: 3}
@@ -38400,5 +38467,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score
       objectReference: {fileID: 0}
+    - target: {fileID: 4657110729107455405, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4889cabb99fbe1498cd68cb1bc00ffc, type: 3}
+--- !u!114 &8719067503478455710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4657110729107455405, guid: c4889cabb99fbe1498cd68cb1bc00ffc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8719067503478455709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

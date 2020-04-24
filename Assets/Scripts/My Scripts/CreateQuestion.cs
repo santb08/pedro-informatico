@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 public class CreateQuestion : MonoBehaviour
 {
     [SerializeField] GameObject objKey;
     [SerializeField] Text propText;
+    [SerializeField] TextMeshProUGUI score;
 
     Scene scene;
     //private QuestionClass[] questions;
@@ -22,6 +25,7 @@ public class CreateQuestion : MonoBehaviour
     void Update()
     {
         RenderQuestions();
+        score.text = string.Format(score.text, GameManager.GetCurrentScore());
     }
 
     public void RenderQuestions() {

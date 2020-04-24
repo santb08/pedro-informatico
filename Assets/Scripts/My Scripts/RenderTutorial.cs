@@ -8,6 +8,7 @@ public class RenderTutorial : MonoBehaviour
     public LayerMask layerPlayer;
     public Text txtTutorial;
     public string hint;
+    public bool r = false;
 
     private void Start()
     {
@@ -15,14 +16,13 @@ public class RenderTutorial : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.layer == Mathf.Log(layerPlayer.value, 2)) {
-            txtTutorial.text = hint; 
+            txtTutorial.text = hint;
+            if (r) txtTutorial.color = Color.yellow;
             txtTutorial.resizeTextForBestFit = true;
         }
     }
     
     void OnTriggerExit2D(Collider2D collision) {
-        if (collision.gameObject.layer == Mathf.Log(layerPlayer.value, 2)) {
-            txtTutorial.text = "";
-        }
+        txtTutorial.text = "";
     }
 }

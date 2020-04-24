@@ -23,7 +23,6 @@ public class SaveThematic : MonoBehaviour
         string name = thematic.text;
         string path = "Assets/config/" + name + ".txt";
         GameManager.SetGameThematic(name);
-        AssetDatabase.ImportAsset(path);
         StreamWriter writer = new StreamWriter(path, true);
         writer.Close();
         GameManager.UpdateFiles();
