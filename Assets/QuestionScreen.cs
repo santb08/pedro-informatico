@@ -55,21 +55,21 @@ public class QuestionScreen : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Keypad1) || Input.GetKey(KeyCode.Alpha1))
         {
-            userIndexInput = 1;
+            userIndexInput = 0;
         }
         if (Input.GetKey(KeyCode.Keypad2) || Input.GetKey(KeyCode.Alpha2))
         {
-            userIndexInput = 2;
+            userIndexInput = 1;
         }
         if (Input.GetKey(KeyCode.Keypad3) || Input.GetKey(KeyCode.Alpha3))
         {
-            userIndexInput = 3;
+            userIndexInput = 2;
         }
     }
 
     void CheckAnswer()
     {
-        if (userIndexInput - 1 == question.correctAnswerIndex)
+        if (userIndexInput == question.correctAnswerIndex)
         {
             //Sumar Puntos
             Debug.Log("Correcta");
