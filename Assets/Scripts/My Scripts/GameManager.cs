@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     private static List<QuestionClass> questions = new List<QuestionClass>();
     
     static GameManager() {
-        files = Directory.GetFiles("Assets\\Config\\", "*.txt");
+        files = Directory.GetFiles("Assets\\config\\", "*.txt");
         if (GameThematic != "")
         {
             FormatQuestions();
