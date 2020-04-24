@@ -5,6 +5,11 @@ using UnityEngine;
 public class BackgroundMusic : MonoBehaviour
 {
     void Awake() {
-        DontDestroyOnLoad(transform.gameObject);
+        if (!GameManager.isMusicPlaying) {
+            DontDestroyOnLoad(transform.gameObject);
+            GameManager.isMusicPlaying = true;
+        } else {
+            Destroy(transform.gameObject);
+        }
     }
 }

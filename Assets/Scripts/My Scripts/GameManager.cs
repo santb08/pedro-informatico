@@ -9,18 +9,20 @@ public class GameManager : MonoBehaviour
 {
     private static int currentScore = 0;
     public static int CurrentLevel = 1;
-    public static string directory = @"Assets\\Config\\";
+    public static string directory = Application.streamingAssetsPath + "/Config/";
     public static string GameThematic = "​";
     // private string thematic;
     private static AssetBundle myAssetBundle;
     public static string[] scenePaths;
     public static string[] files;
     private static string[] questionsFile;
+    public static bool isMusicPlaying = false;
     public static string lastLvl = "Level_1";
     private static List<QuestionClass> questions = new List<QuestionClass>();
     
     static GameManager() {
-        files = Directory.GetFiles("Assets\\Config\\", "*.txt");
+        System.IO.Directory.CreateDirectory(directory);
+        files = Directory.GetFiles(directory, "*.txt");
         if (GameThematic != "")
         {
             FormatQuestions();
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public static void UpdateFiles()
     {
-        files = Directory.GetFiles("Assets\\Config\\", "*.txt");
+        files = Directory.GetFiles(directory, "*.txt");
     }
 
     public static void FormatQuestions() 
