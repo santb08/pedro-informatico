@@ -14,12 +14,12 @@ public class QuestionFR : MonoBehaviour
 
     [SerializeField] TMP_InputField enunciado, correcta, incorrecta1, incorrecta2;
 
-    string[] dirs = Directory.GetFiles("Assets\\Config\\", "*.txt");
+    string[] dirs = Directory.GetFiles(GameManager.directory, "*.txt");
 
     //GUARDA LA PREGUNTA EN EL ARCHIVO
     public void WriteFile()
     {
-        string path = "Assets/config/" + GameManager.GameThematic + ".txt";
+        string path = GameManager.directory + GameManager.GameThematic + ".txt";
         //COMO SE ESCRIBE
 
         string question = FormatQuestion(enunciado.text,correcta.text,incorrecta1.text,incorrecta2.text);

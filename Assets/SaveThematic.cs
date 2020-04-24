@@ -22,6 +22,7 @@ public class SaveThematic : MonoBehaviour
         //.GetComponent<TextMeshProUGUI>().text;
         string name = thematic.text;
         string path = GameManager.directory + name + ".txt";
+        Debug.Log(string.Format("SAVING AT {0}", path));
         GameManager.SetGameThematic(name);
         StreamWriter writer = new StreamWriter(path, true);
         writer.Close();

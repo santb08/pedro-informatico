@@ -23,6 +23,8 @@ public class QuestionScreen : MonoBehaviour
             questionIndex = 0;
         } else
         {
+            Debug.Log("OEEE");
+            Debug.Log(GameManager.GetQuestions().Count);
             questionIndex = rand.Next(GameManager.GetQuestions().Count - 1);
         }
         ShowQuestion();
@@ -38,6 +40,7 @@ public class QuestionScreen : MonoBehaviour
             enunciado.text = GameManager.GetQuestions()[questionIndex].ToString();
         }
     }
+    
     // Update is called once per frame
     void Update()
     {
@@ -47,6 +50,7 @@ public class QuestionScreen : MonoBehaviour
             CheckAnswer();
         }
     }
+
     private void HandleUserInput()
     {
         if (Input.GetKey(KeyCode.Keypad1) || Input.GetKey(KeyCode.Alpha1))

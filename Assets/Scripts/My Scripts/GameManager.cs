@@ -57,9 +57,12 @@ public class GameManager : MonoBehaviour
         questions.Clear();
         if (match != null)
         {
+            Debug.Log(match);
             questionsFile = File.ReadAllLines(match);
+            Debug.Log(questionsFile);
             for (int i = 0; i < questionsFile.Length; i++)
             {
+                Debug.Log("OLA");
                 questions.Add(new QuestionClass(
                     i,
                     questionsFile[i].Substring(0, questionsFile[i].IndexOf("%%")),
