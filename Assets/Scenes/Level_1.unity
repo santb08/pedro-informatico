@@ -867,7 +867,7 @@ PrefabInstance:
     - target: {fileID: 7823540328359702539, guid: 638b7dce5f126944382e254865dbd7ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 165
+      value: 14.8
       objectReference: {fileID: 0}
     - target: {fileID: 7823540328359702539, guid: 638b7dce5f126944382e254865dbd7ba,
         type: 3}
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_Follow: {fileID: 113012750}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 8
+    OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -1768,7 +1768,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
