@@ -30,10 +30,15 @@ public class DeleteThematicMenu : MonoBehaviour
         //Se optiene el nombre del archivo
         if (GameManager.files.Length > 0)
         {
-            fileName = Path.GetFileName(GameManager.files[file_index]);
-            thematicToDelete = fileName.Substring(0, fileName.IndexOf(".txt"));
+            Debug.Log(GameManager.files.Length);
+            Debug.Log(file_index);
+            if (file_index < GameManager.files.Length)
+            {
+                fileName = Path.GetFileName(GameManager.files[file_index]);
+                thematicToDelete = fileName.Substring(0, fileName.IndexOf(".txt"));
+                thematicView.GetComponentInChildren<TextMeshProUGUI>().text = thematicToDelete;
+            }
             //Se asigna el texto al botón de eliminar temática
-            thematicView.GetComponentInChildren<TextMeshProUGUI>().text = thematicToDelete;
         } else thematicView.GetComponentInChildren<TextMeshProUGUI>().text = "Sin Temáticas";
     }
 
@@ -45,7 +50,7 @@ public class DeleteThematicMenu : MonoBehaviour
 
     public void IncreaseIndex()
     {
-        if (file_index + 1 < GameManager.files.Length) file_index++;
+        if (file_index < GameManager.files.Length) file_index++;
     }
     public void DecreaseIndex()
     {
