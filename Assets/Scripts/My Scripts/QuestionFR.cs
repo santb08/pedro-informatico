@@ -35,18 +35,18 @@ public class QuestionFR : MonoBehaviour
         {
             WriteFile();
         }
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("QTL");
     }
 
     //Agregar otra pregunta
-    public void AddQuestion()
-    {
-        WriteFile();
-        enunciado.text = "";
-        correcta.text = "";
-        incorrecta1.text = "";
-        incorrecta2.text = "";
-    }
+    //public void AddQuestion()
+    //{
+    //    WriteFile();
+    //    enunciado.text = "";
+    //    correcta.text = "";
+    //    incorrecta1.text = "";
+    //    incorrecta2.text = "";
+    //}
 
     string FormatQuestion(string q, string r1, string r2, string r3)
     {

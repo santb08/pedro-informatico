@@ -27,6 +27,6 @@ public class SaveThematic : MonoBehaviour
         StreamWriter writer = new StreamWriter(path, true);
         writer.Close();
         GameManager.UpdateFiles();
-        SceneManager.LoadScene("InputQuestions");
+        SceneManager.LoadScene("QTL");
     }
 }
