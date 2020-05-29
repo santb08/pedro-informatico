@@ -12,10 +12,6 @@ public class CreateQuestion : MonoBehaviour
     [SerializeField] TextMeshProUGUI score;
 
     Scene scene;
-    //private QuestionClass[] questions;
-    //private bool questionRendered = false;
-    //private const float TEXT_TYPING_DELAY_TIME = 0.05f;
-    //private int userIndexInput = -1;
 
     void Start() {
         //questions = GameManager.GetQuestions();
@@ -34,27 +30,5 @@ public class CreateQuestion : MonoBehaviour
             GameManager.lastLvl = scene.name;
             SceneManager.LoadScene("QuestionScreen");
         }
-        {/* COMO SE VERIFICA LA ENTRADA
-        if (userIndexInput > 0) {
-            if (userIndexInput == questions[lvl].correctAnswerIndex) {
-                GameManager.IncreaseScore();
-            }
-            if (scene.buildIndex < 7)
-            {
-                int tempIndex = scene.buildIndex + 1;
-                SceneManager.LoadScene("QuestionScreen");
-            }
-            if (GameManager.CurrentLevel < 3) GameManager.CurrentLevel++;
-        } else {
-            //Debug.Log("NOOOo");
-        }
-        */
-            //if (this.questionRendered) return;
-            //if (this.objKey == null) {
-            //    StartCoroutine(TypeText(questions[lvl].ToString()));
-            //    this.questionRendered = true;
-            //}
-            //this.HandleUserInput();
-         }
     }
 }

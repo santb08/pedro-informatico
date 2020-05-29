@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class QuestionList : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     public void GoBack()
     {
@@ -20,5 +14,12 @@ public class QuestionList : MonoBehaviour
     public void AddQuestion()
     {
         SceneManager.LoadScene("InputQuestions");
+    }
+
+    public void SaveQuestions() 
+    {
+        // SceneManager.
+        GameManager.WriteFile();
+        SceneManager.LoadScene("Settings");
     }
 }

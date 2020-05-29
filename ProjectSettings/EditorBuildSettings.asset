@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_1.unity
     guid: 629ef25aca45b9d418b647bb6562b142
-  - enabled: 1
-    path: Assets/Scenes/Level_2.unity
-    guid: 6a8f38d7a0ec4714890dc65c0ac4e5f1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Level_3.unity
     guid: d7d5698c215aca24aa487a36138a7679
@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeleteMenu.unity
     guid: 515982be1909d774f980289cbf1149b1
+  - enabled: 1
+    path: Assets/Scenes/EditQuestion.unity
+    guid: 3c2775c920793d04eb573fda5bea55b6
   - enabled: 1
     path: Assets/Scenes/QuestionScreen.unity
     guid: 3d49cede0aa7a76498972b344f25042c

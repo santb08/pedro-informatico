@@ -23,7 +23,6 @@ public class QuestionScreen : MonoBehaviour
             questionIndex = 0;
         } else
         {
-            Debug.Log("OEEE");
             Debug.Log(GameManager.GetQuestions().Count);
             questionIndex = rand.Next(GameManager.GetQuestions().Count - 1);
         }

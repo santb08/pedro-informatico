@@ -18,8 +18,13 @@ public class GameManager : MonoBehaviour
     private static string[] questionsFile;
     public static bool isMusicPlaying = false;
     public static string lastLvl = "Level_1";
-    private static List<QuestionClass> questions = new List<QuestionClass>();
+    public static List<QuestionClass> questions = new List<QuestionClass>();
     
+    // New thematic
+    public static string newThematicName = "TEEEEEEEEEEESTXD";
+    public static List<String> newThematicQuestions = new List<String>();
+    public static int indexQuestionEdit = -1;
+
     static GameManager() {
         System.IO.Directory.CreateDirectory(directory);
         files = Directory.GetFiles(directory, "*.txt");
@@ -57,12 +62,9 @@ public class GameManager : MonoBehaviour
         questions.Clear();
         if (match != null)
         {
-            Debug.Log(match);
             questionsFile = File.ReadAllLines(match);
-            Debug.Log(questionsFile);
             for (int i = 0; i < questionsFile.Length; i++)
             {
-                Debug.Log("OLA");
                 questions.Add(new QuestionClass(
                     i,
                     questionsFile[i].Substring(0, questionsFile[i].IndexOf("%%")),
@@ -90,5 +92,19 @@ public class GameManager : MonoBehaviour
     public static void DecreaseScore()
     {
         currentScore--;
+    }
+
+    
+    //GUARDA LA PREGUNTA EN EL ARCHIVO
+    public static void WriteFile()
+    {
+        string path = GameManager.directory + GameManager.GameThematic + ".txt";
+        StreamWriter writer = new StreamWriter(path, true);
+
+        foreach (string question in newThematicQuestions) {
+            writer.WriteLine(question);
+        }
+        
+        writer.Close();
     }
 }

@@ -20,6 +20,7 @@ public class SaveThematic : MonoBehaviour
     {
         //Crear archivo
         //.GetComponent<TextMeshProUGUI>().text;
+        GameManager.newThematicQuestions.Clear();
         string name = thematic.text;
         string path = GameManager.directory + name + ".txt";
         Debug.Log(string.Format("SAVING AT {0}", path));
